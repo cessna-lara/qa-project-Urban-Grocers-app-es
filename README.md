@@ -43,6 +43,10 @@ pytest
 
 requests
 
+El comando para ejecutar el proyecto
+pytest folder/archivo.py.
+
+
 Programas utilizados
 
 postman para hacer pruebas previas
