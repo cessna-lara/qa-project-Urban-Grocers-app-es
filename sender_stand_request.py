@@ -20,8 +20,6 @@ def post_new_client_kit(kit_body):
     return requests.post(configuration.URL_SERVICE + configuration.CREATE_KIT_PATH,
                          json=kit_body,
                          headers=headers)
-
-
 def get_users_table():
     url = configuration.URL_SERVICE + configuration.USERS_TABLE_PATH
     response = requests.get(url)
