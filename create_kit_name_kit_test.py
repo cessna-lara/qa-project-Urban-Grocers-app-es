@@ -61,46 +61,39 @@ def negative_assert_no_name(kit_body):
 
 # Prueba 1. Usuario o usuaria creada con éxito. El parámetro firstName contiene 1 caracter
 def test_create_user_1_letter_in_name_get_success_response():
-    positive_assert("a")
-
-
+    positive_assert("data.kit_body1")
 
 # Prueba 2. Usuario o usuaria creada con éxito. El parámetro firstName contiene 511 caracteres
 def test_create_user_511_letter_in_name_get_success_response():
-    positive_assert("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC")
+    positive_assert("data.kit_body2")
 
 
 # Prueba 3. Error. El parámetro firstName contiene 0 carácter
 def test_create_user_0_letter_in_name_get_error_response():
-    negative_assert_code_400("")
+    negative_assert_code_400("data.kit_body3")
 
 
 # Prueba 4. Error. El parámetro firstName contiene 512 caracteres
 def test_create_user_512_letter_in_name_get_error_response():
-    negative_assert_code_400("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD")
+    negative_assert_code_400("data.kit_body4")
 
 # Prueba 5. Usuario o usuaria creada con éxito. El parámetro firstName contiene caracteres especiales
 def test_create_user_caracteres_letter_in_name_get_success_response():
-    positive_assert("№%@")
+    positive_assert("data.kit_body5")
 
 
 # Prueba 6. Error. El parámetro firstName permite espacios
 def test_create_user_has_special_symbol_in_name_get_error_response():
-    positive_assert("A Aaa")
+    positive_assert("data.kit_body6")
 
 
 # Prueba 7. Error. El parámetro firstName contiene un string de dígitos
 def test_create_user_has_number_in_name_get_error_response():
-    positive_assert("123")
+    positive_assert("7")
 
 # Prueba 8. Error. Falta el parámetro firstName en la solicitud
 def test_create_user_no_name_get_error_response():
-    # El diccionario con el cuerpo de la solicitud se copia del archivo "data" a la variable "user_body"
-    kit_body = data.kit_body.copy()
-    # El parámetro "firstName" se elimina de la solicitud
-    kit_body.pop("name")
-    # Comprueba la respuesta
-    negative_assert_no_name(kit_body)
+   negative_assert_no_name(kit_body8)
 
 # Prueba 9. Error. El tipo del parámetro firstName: número
 def test_create_user_number_type_name_get_error_response():
